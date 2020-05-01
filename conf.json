@@ -1,0 +1,24 @@
+{
+    "global_params" : {
+    "site" : "youtube.com",
+    "intitle": ["songs", "hits", "mashups"],
+    "num_of_tracks" : 5},
+    "artists": [ 
+        {
+            "name" : "Sithara Krishnakumar",
+            "tags"   : ["music mojo","movie songs"]
+        },
+        {
+            "name" : "Sid Sriram",
+            "tags"   : ["tamil","malayalam","telugu"]
+        },
+        {
+            "name" : "Ed Sheeran",
+            "tags"   : ["Albums"]
+        },
+        {
+            "name" : "Maroon5",
+            "tags"   : ["Albums"]
+        }
+    ]
+}

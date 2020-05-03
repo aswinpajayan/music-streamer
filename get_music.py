@@ -11,6 +11,7 @@ class MusicBrowser:
         self.query = "site:" + params['site']
         self.query += " (intitle:" + " OR ".join(params['intitle']) + ")"
         self.query += " \"" + artist['name'] + "\" -channel"
+        self.query += " -playlist -cover"
         if 'tags' in artist:
             self.query += " " + " ".join(artist['tags'])
         self.tracks = ""

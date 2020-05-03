@@ -38,4 +38,6 @@ Any linux machine .
     - running this mutliple times may not work depending upon the number of artists and pause you are giving in between the searches . 
     you can increase the pause parameter in the get_music.py to avoid this. 
 
+### fifo version
 
+    Using fifo instead of files to get faster first songs

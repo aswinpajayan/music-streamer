@@ -2,6 +2,7 @@
 
 import json
 import random
+import os
 
 class MusicBrowser:
     ''' Class to get links for youtube videos
@@ -36,6 +37,7 @@ class MusicBrowser:
 def main():
     '''main method'''
     playlist = []
+    fifo = open("links.fifo", "w")
     with open("conf.json", "r") as global_conf:
         conf = (json.load(global_conf))
     for artist in conf['artists']:
@@ -43,7 +45,9 @@ def main():
         browser = MusicBrowser(artist, params=conf['global_params'])
         browser.get_tracks()
         for track in browser.tracks:
-            playlist.append(track)
+            fifo.write(track + "\n")
+    fifo.write("quit\n")
+    fifo.close()
     random.shuffle(playlist)
     print(playlist)
     playlist = "\n".join(playlist)

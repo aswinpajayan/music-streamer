@@ -34,7 +34,7 @@ Any linux machine .
  Note that the scripts just queue the links - play with your favourite client - say ncmpcpp or just open another terminal after a few seconds and type ```mpc toggle```
  
  ### caveats
- adding mashups in conf file may result in songs of various artists
-
+    - adding mashups in conf file may result in songs of various artists
+    - running this mutliple times may not work depending upon the number of artists and pause you are giving in between the searches . you can increase the pause parameter in the get_music.py to avoid this. 
 
 

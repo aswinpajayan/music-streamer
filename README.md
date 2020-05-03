@@ -1,4 +1,4 @@
-# music-streamer
+# Music-streamer
 simple script to stream my favourite artists from youtube --no-audio --no-browser --no-player
 
 Python script to fetch music videos from my favourite aritists and play them in background.
@@ -14,7 +14,7 @@ Any linux machine .
 ## Dependencies 
 
   - mpd (music player daemon)  & mpc 
-    - sudo apt install mpd mpc -y
+    ```sudo apt install mpd mpc -y```
   - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
     ```
     sudo apt install curl -y
@@ -22,7 +22,7 @@ Any linux machine .
     sudo chmod a+rx /usr/local/bin/youtube-dl
     ``` 
   - python
-    - [googleseearch](https://python-googlesearch.readthedocs.io/en/latest/)
+    - [googlesearch](https://python-googlesearch.readthedocs.io/en/latest/)
     ```pip install google```
   - ncmpcpp(optional) : n curses musicplayer client ++
     
@@ -33,6 +33,8 @@ Any linux machine .
   - run the bash script ```./queu_music```
  Note that the scripts just queue the links - play with your favourite client - say ncmpcpp or just open another terminal after a few seconds and type ```mpc toggle```
  
+ ### caveats
+ adding mashups in conf file may result in songs of various artists
 
 
 

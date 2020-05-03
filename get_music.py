@@ -23,7 +23,7 @@ class MusicBrowser:
         except ImportError:
             print("No module named 'google' Found, check venv")
         self.tracks = search(query=self.query,
-                             lang='en', num=self.num, stop=self.num, pause=20)
+                             lang='en', num=self.num, stop=self.num, pause=40)
 
     def get_playlists(self, get_list=False):
         ''' is_list = True returns playlist url'''

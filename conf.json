@@ -13,12 +13,7 @@
             "tags"   : ["tamil","malayalam","telugu"]
         },
         {
-            "name" : "Ed Sheeran",
-            "tags"   : ["Albums"]
-        },
-        {
-            "name" : "Maroon5",
-            "tags"   : ["Albums"]
+            "name" : "Ed Sheeran"
         }
     ]
 }

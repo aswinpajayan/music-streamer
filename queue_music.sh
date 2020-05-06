@@ -7,13 +7,31 @@
 #       - googlesearch
 # optional 
 #   -ncmpcpp 
-if [ -f "links.tmp" ]
+link_fifo="links.fifo"
+if [ -p "$link_fifo" ]
 then
-    rm -f links.tmp
+    echo "fifo exists"
+else
+    echo "creating ... fifo"
+    mkfifo  "$link_fifo"
 fi
-/usr/bin/python3 get_music.py
-for link in `cat links.tmp | grep -v playlist | grep -v channel`
-do
-    mpc add `youtube-dl -g --quiet $link`
-done
+/usr/bin/python3 get_music.py & 
+echo ".................python in background......."
+
+while true
+do                # read line from link_fifo
+    if read line; then
+        if [ "$line" = 'quit' ]; then           # if line is quit, quit
+            printf "%s: 'quit' command received\n" "$link_fifo"
+            break
+        fi
+        echo "getting link....to queue"
+        mpc add `youtube-dl --no-playlist --ignore-errors -g $line`
+    fi
+done <"$link_fifo"
+
+#for link in `cat links.tmp | grep -v playlist | grep -v channel`
+#do
+#    mpc add `youtube-dl -g --quiet $link`
+#done
 mpc shuffle

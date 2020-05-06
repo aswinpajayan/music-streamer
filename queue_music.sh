@@ -26,7 +26,7 @@ do                # read line from link_fifo
             break
         fi
         echo "getting link....to queue"
-        mpc add `youtube-dl -g --quiet $line`
+        mpc add `youtube-dl --no-playlist --ignore-errors -g $line`
     fi
 done <"$link_fifo"
 
